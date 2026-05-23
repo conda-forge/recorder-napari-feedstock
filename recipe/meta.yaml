@@ -1,5 +1,5 @@
 {% set name = "recorder-napari" %}
-{% set version = "0.2.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/recOrder-napari-{{ version }}.tar.gz
-  sha256: 9390bbb1f94a775308c1a4067f660942db1c9026ff841ae732a26f36b17b62f3
-  patches:
-    - modules.patch
-    - qtpy.patch
+  sha256: c0818ca0f7a4b369daea62ac7e9bc9bcca02a89c2c2d9a2a83785767cc4f05de
 
 build:
   entry_points:
@@ -76,6 +73,7 @@ test:
     - recorder.convert --help
   requires:
     - pip
+    - pyqt
 
 about:
   home: https://pypi.org/project/recorder
